@@ -18,15 +18,16 @@ class RomanNumbers:
 
  # Function to convert integer to roman number values
  
-    def from_roman(number:str)-> int:
-        roman_dict=  {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
-        adding = 0
-        for i in range(len(number)-1,-1,-1): 
+    def roman_to_int(s):
 
-            num = roman_dict[number[i]]
-            if 3*num < adding:
+     rom_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+     int_val = 0
+     
+     for i in range(len(s)):
 
-                adding -= num
-            else:
-                adding += num
-            return adding
+         if i > 0 and rom_dict[s[i]] > rom_dict[s[i - 1]]:
+
+            int_val += rom_dict[s[i]] - 2 * rom_dict[s[i - 1]]
+         else:
+            int_val += rom_dict[s[i]]
+            return int_val
