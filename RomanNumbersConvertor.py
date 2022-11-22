@@ -1,5 +1,5 @@
 class RomanNumbers:
-# Function to convert integer to roman number values
+# This function can convert any integer into its roman number, range of int : [0, +inf[
 
     def to_roman(number):
 
@@ -16,13 +16,13 @@ class RomanNumbers:
                 f_div -= 1
             i -= 1
 
- # Function to convert integer to roman number values
+ # Function to convert integer to roman number values, range of possible int output : [0, 3999]
  
     def roman_to_int(s):
 
      rom_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
      int_val = 0
-     
+
      for i in range(len(s)):
 
          if i > 0 and rom_dict[s[i]] > rom_dict[s[i - 1]]:
